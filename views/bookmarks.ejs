@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Bookmarks</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/usermovies">Movies</a>
+        <a href="/bookmarks">My Bookmarks</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <h1><%= username %>'s Bookmarked Movies</h1>
+
+    <% if (movies.length === 0) { %>
+
+        <p>You have not bookmarked any movies.</p>
+
+    <% } %>
+
+    <div class="movie-container">
+
+        <% movies.forEach(function(movie) { %>
+
+            <div class="movie-card">
+
+                <img
+                    src="/images/<%= movie.image || movie.title.toLowerCase() + '.jpg' %>"
+                    alt="<%= movie.title %> poster"
+                >
+
+                <h2><%= movie.title %></h2>
+
+                <p>Release Year: <%= movie.year %></p>
+
+                <a href="/movie/<%= movie._id %>">
+                    View Movie
+                </a>
+
+                <br><br>
+
+                <a href="/remove-bookmark/<%= movie._id %>">
+                    Remove Bookmark
+                </a>
+
+            </div>
+
+        <% }); %>
+
+    </div>
+
+</body>
+</html>

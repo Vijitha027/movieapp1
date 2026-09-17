@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Movie</title>
+</head>
+<body>
+
+    <h1>Edit Movie</h1>
+
+    <form action="/edit/<%= movie._id %>" method="POST">
+
+        <label>Movie Title:</label>
+        <input type="text" name="title" value="<%= movie.title %>" required>
+
+        <br><br>
+
+        <label>Release Year:</label>
+        <input type="number" name="year" value="<%= movie.year %>" required>
+
+        <br><br>
+
+        <button type="submit">Update Movie</button>
+
+    </form>
+
+</body>
+</html>

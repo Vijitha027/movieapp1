@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Movie</title>
+</head>
+<body>
+
+    <h1>Add Movie</h1>
+
+    <form action="/addmovie" method="POST">
+
+        <label>Movie Title:</label>
+        <input type="text" name="title" required>
+
+        <br><br>
+
+        <label>Release Year:</label>
+        <input type="number" name="year" min="1888" max="2026" required>
+
+        <br><br>
+
+        <label>Genre:</label>
+        <input type="text" name="genre" required>
+
+        <br><br>
+
+        <label>Description:</label>
+        <textarea name="description" required></textarea>
+
+        <br><br>
+
+        <label>Image file name:</label>
+        <input
+            type="text"
+            name="image"
+            placeholder="inception.jpg"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">Add Movie</button>
+
+    </form>
+
+</body>
+</html>
